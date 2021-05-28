@@ -4,9 +4,11 @@ using namespace std;
 
 int main()
 {
-	string txt;
-	cout << "Please, enter string:\n";
-	cin >> txt;
-	cout << "The lenth of string is: " << txt.length();
+	string txt, a, b;
+	cout << "Enter two srtings\n";
+	cin >> a >> b;
+	txt = a + b;
+	cout << txt	<< "\n";
+	cout << "The length of the string is: " << txt.length();
 	return 0;
 }
