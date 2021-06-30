@@ -1,4 +1,4 @@
-template< typename RandomAccessIterator, typename Compare > //сортировка Шелла
+template<typename RandomAccessIterator, typename Compare> //сортировка Шелла
 void shell_sort( RandomAccessIterator first, RandomAccessIterator last, Compare comp )
 {
     for( auto d = ( last - first ) / 2; d != 0; d /= 2 )
