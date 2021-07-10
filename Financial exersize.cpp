@@ -1,20 +1,20 @@
-#include <iostream>		//financial exercize Пользователь вводит количество дней, указывает процент скидки и вводит сумму. Рассчитать прибыль, если за каждый день сумма увеличивается на 3 $  и затем применяется скидка, то есть итоговая сумма еще увеличивается на данное число процентов.
+#include <iostream>		//financial exercize ГЏГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гј ГўГўГ®Г¤ГЁГІ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г¤Г­ГҐГ©, ГіГЄГ Г§Г»ГўГ ГҐГІ ГЇГ°Г®Г¶ГҐГ­ГІ Г±ГЄГЁГ¤ГЄГЁ ГЁ ГўГўГ®Г¤ГЁГІ Г±ГіГ¬Г¬Гі. ГђГ Г±Г±Г·ГЁГІГ ГІГј ГЇГ°ГЁГЎГ»Г«Гј, ГҐГ±Г«ГЁ Г§Г  ГЄГ Г¦Г¤Г»Г© Г¤ГҐГ­Гј Г±ГіГ¬Г¬Г  ГіГўГҐГ«ГЁГ·ГЁГўГ ГҐГІГ±Гї Г­Г  3 $  ГЁ Г§Г ГІГҐГ¬ ГЇГ°ГЁГ¬ГҐГ­ГїГҐГІГ±Гї Г±ГЄГЁГ¤ГЄГ , ГІГ® ГҐГ±ГІГј ГЁГІГ®ГЈГ®ГўГ Гї Г±ГіГ¬Г¬Г  ГҐГ№ГҐ ГіГўГҐГ«ГЁГ·ГЁГўГ ГҐГІГ±Гї Г­Г  Г¤Г Г­Г­Г®ГҐ Г·ГЁГ±Г«Г® ГЇГ°Г®Г¶ГҐГ­ГІГ®Гў.
 using namespace std;
 
 int main()
 {
 	cout << "Write count of days and persentage:\n";
-	int _count_of_days = 0;
-	int _percentage = 0;
-	int _sum = 0;
+	int count_of_days = 0;
+	int percentage = 0;
+	int sum = 0;
 
-	cin >> _count_of_days >> _percentage;
+	cin >> count_of_days >> percentage;
 
 
-	for (int _count_of_days = 1; _count_of_days <= 30; _count_of_days++) {
-		_sum += 3;
-		_sum = _percentage * _sum;
+	for (int count_of_days = 1; count_of_days <= 30; count_of_days++) {
+		sum += 3;
+		sum = percentage * sum;
 	}
-	cout << _count_of_days;
+	cout << count_of_days;
 	return 0;
 }
