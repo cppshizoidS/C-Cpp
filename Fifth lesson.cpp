@@ -1,14 +1,13 @@
-#include <iostream>
-
+#include <iostream> //сортировка пузырьком
 using namespace std;
 
 int main()
 {
-    int* arr;
-    int size;
+    int* arr;   //указатель на переменную где юудет храниться массив
+    int size;   //переменная с размером массива
 
-    cout << "n = ";
-    cin >> size;
+    cout << "n = "; 
+    cin >> size;    //ввод размера массива
 
     if (size <= 0) {
         cerr << "Invalid size" << endl;
