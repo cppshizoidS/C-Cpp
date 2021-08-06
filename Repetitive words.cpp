@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream>	//repetitive words
 #include <string>
 using namespace std;
 
