@@ -2,14 +2,14 @@
 using namespace std;
 int main()
 {
-	int	a, b, _sum, _difference, _product, _quotient, x;
+	int	a, b, sum, difference, product, quotient, x;
 	cout << "Please, enter the numbers:\n";
 	cin >> a >> b;
-	_sum = a + b;
-	_difference = a - b;
-	_product = a * b;
-	_quotient = a / b;
+	sum = a + b;
+	difference = a - b;
+	product = a * b;
+	quotient = a / b;
 	x = a % b;
-	cout << "Sum is: " << _sum << "\n" << "Difference is: " << _difference << "\n" << "Product is: " << _product << "\n" << "Quotient is: " << _quotient;
+	cout << "Sum is: " << sum << "\n" << "Difference is: " << difference << "\n" << "Product is: " << product << "\n" << "Quotient is: " << quotient;
 	return 0;
 }
