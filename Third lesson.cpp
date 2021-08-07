@@ -10,6 +10,9 @@ int main()
 	product = a * b;
 	quotient = a / b;
 	x = a % b;
-	cout << "Sum is: " << sum << "\n" << "Difference is: " << difference << "\n" << "Product is: " << product << "\n" << "Quotient is: " << quotient;
+	cout << "Sum is: " << sum << "\n" 
+	     << "Difference is: " << difference << "\n" 
+	     << "Product is: " << product << "\n" 
+	     << "Quotient is: " << quotient;
 	return 0;
 }
