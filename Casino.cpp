@@ -69,7 +69,6 @@ int main()
 void rules()
 {
     system("cls");
-    cout << "\t\t======CASINO NUMBER GUESSING RULES!======\n";
     cout << "\t1. Choose a number between 1 to 10\n";
     cout << "\t2. Winner gets 10 times of the money bet\n";
     cout << "\t3. Wrong bet, and you lose the amount you bet\n\n";
