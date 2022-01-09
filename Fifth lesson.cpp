@@ -1,4 +1,4 @@
-#include <iostream> //сортировка пузырьком
+    #include <iostream> //сортировка пузырьком
 using namespace std;
 
 int main()

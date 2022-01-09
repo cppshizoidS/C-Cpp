@@ -1,5 +1,5 @@
 #include <iostream> //structs first practise
-using namepsace std;
+using namespace std;
 
 int main() {
 	struct First_Struct {
@@ -9,15 +9,15 @@ int main() {
 	};
 
 	First_Struct alex;
-	alex.id = 8;
-	alex.age = 19;
-	alex.salary = 65.5
+		alex.id = 8;
+		alex.age = 18;
+		alex.salary = 65.5;
 
 	First_Struct nicka;
-	nicka.id = 9;
-	nicka.age = 18;
-	nicka.salary = 40.5
-
+		nicka.id = 9;
+		nicka.age = 18;
+		nicka.salary = 40.5;
+	
 	int totalAge = alex.age + nicka.age;
 	if (alex.salary > nicka.salary)
 		cout << "Alex makes more than Nicka\n";
@@ -28,12 +28,15 @@ int main() {
 
 	//up for salary for Alex
 	alex.salary += 5.5;
+	//up salary for Nicka
+
+	nicka.salary += 5.5;
 
 	++nicka.age;
 	++alex.age;
 
-	a = alex.age;
-	b = nicka.age;
+	int a = alex.age;
+	int b = nicka.age;
 
 
 	cout << a << b;
