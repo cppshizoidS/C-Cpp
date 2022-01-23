@@ -3,9 +3,9 @@ using namespace std;
 
 int main() {
 	struct First_Struct {
-		int a;
-		int b;
-		double x;
+		int id;
+		int age;
+		double salary;
 	};
 
 	First_Struct alex;
@@ -21,7 +21,7 @@ int main() {
 	int totalAge = alex.age + nicka.age;
 	if (alex.salary > nicka.salary)
 		cout << "Alex makes more than Nicka\n";
-	else if (john.salary < james.salary)
+	else if (alex.salary < nicka.salary)
 		cout << "Alex makes less than Nicka\n";
 	else
 		cout << "Alex and Nicka make the same amount\n";
