@@ -42,6 +42,7 @@ void bubbleSort(int* array, int size) {     //bubble sort
             {
                 if (a[j] < a[i]) {
                 temp = a[i];
+
                 a[i] = a[j];
                 a[j] = temp;
                     }

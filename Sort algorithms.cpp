@@ -49,9 +49,9 @@ void bubbleSort(int* array, int size) {     //bubble sort
             pass++;
         }
     cout << "Sorted Element List ...\n";
-        for (i = 0; i < 10; i++) {
-            cout << a[i] << "\t";
-    }
+    for (i = 0; i < 10; i++) {
+        cout << a[i] << "\t";
+    };
     cout << "\nNumber of passes taken to sort the list:" << pass << endl;
     return 0;
     }
