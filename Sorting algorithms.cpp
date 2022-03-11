@@ -4,8 +4,7 @@
 using namespace std;
 
 void swapping(int& a, int& b) {             //implement selection Sort
-    int temp;
-    temp = a;
+    int temp = a;
     a = b;
     b = temp;
 }
