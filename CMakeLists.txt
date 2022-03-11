@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.20)
+project(Learning)
+
+set(CMAKE_CXX_STANDARD 14)
+
+SET(CMAKE_C_COMPILER "C:/MinGW/bin/mingw32-c++.exe")
+SET(CMAKE_CXX_COMPILER "C:/MinGW/bin/mingw32-c++.exe")
+
+add_executable(learning.cmake)
+add_executable(Det Of Matrix.cpp)
+add_executable(Det Of Matrix "Det Of Matrix.cpp")
+add_executable(main main.cpp)
+add_executable(README README.md)
+add_executable(Sorting algorithms "Sorting algorithms.cpp")
+add_executable(Sort algorithms "Sort algorithms.cpp")
+add_executable(CMakeLists CMakeLists.txt)
+add_executable(CMakeCache cmake-build-debug/CMakeCache.txt)
+add_executable(learning learning.cmake)
+add_executable(clion-environment cmake-build-debug/CMakeFiles/clion-environment.txt)
+add_executable(CppProperties CppProperties.json)
+add_executable(repetitive wordsV2 "repetitive wordsV2.cpp")

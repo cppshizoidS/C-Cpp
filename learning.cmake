@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.8)
 set(PROJECT learning)
 
 
-set(SOURCES /GitHub/2_Semestr/main.cpp)
+set(SOURCES /GitHub/Learning)
 
 project(${PROJECT})
 
