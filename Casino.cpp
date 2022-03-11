@@ -10,7 +10,7 @@ int main()
     int balance; // stores player's balance
     int bettingAmount;
     int guess;
-    int dice; // stores the random number   
+    int dice; // stores the random number
     char choice;
     srand(time(0)); // "Seed" the random generator
     cout << "\n\t\t========WELCOME TO CASINO WORLD=======\n\n";
