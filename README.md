@@ -10,4 +10,4 @@ Sorts contains a different sorts algorithms
 
 Det Of Matrix contains a program for find a determinant of matrix
 
-Algorithms contains a basic algorithms
+Algorithms contains a basic algorithms(Searchs, etc)
