@@ -11,3 +11,5 @@ Sorts contains a different sorts algorithms
 Det Of Matrix contains a program for find a determinant of matrix
 
 Algorithms contains a basic algorithms(Searchs, etc)
+
+[![](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](C++/)
