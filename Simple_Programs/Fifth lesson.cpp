@@ -1,4 +1,4 @@
-    #include <iostream> //ñîðòèðîâêà ïóçûðüêîì
+#include <iostream> //ñîðòèðîâêà ïóçûðüêîì
 using namespace std;
 
 int main()
