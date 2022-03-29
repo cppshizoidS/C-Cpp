@@ -14,6 +14,8 @@ Algorithms contains a basic algorithms(Searchs, etc)
 
 Qt5 contains the basic programs on Qt5
 
+Glut contains the GLUT library projects
+
 [![](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](C++/)
 ----------------------------------------------------------------------------------------------------------
 ![](https://tokei.rs/b1/github/cppshizoidS/Learning-Cpp?category=code)
