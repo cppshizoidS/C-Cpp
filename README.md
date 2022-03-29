@@ -14,4 +14,4 @@ Algorithms contains a basic algorithms(Searchs, etc)
 
 [![](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](C++/)
 ----------------------------------------------------------------------------------------------------------
-![GitHub](https://img.shields.io/tokei/lines/github/cppshizoidS/Learning-Cpp?style=for-the-badge)
+![](https://tokei.rs/b1/github/cppshizoidS/Learning-Cpp?category=code)
