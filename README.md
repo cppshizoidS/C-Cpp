@@ -18,4 +18,4 @@ Qt5 contains the basic programs on Qt5
 ----------------------------------------------------------------------------------------------------------
 ![](https://tokei.rs/b1/github/cppshizoidS/Learning-Cpp?category=code)
 
-![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url = https://github.com/cppshizoidS/Learning-Cpp)
+[![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url = https://github.com/cppshizoidS/Learning-Cpp)]
