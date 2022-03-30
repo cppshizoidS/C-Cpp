@@ -1,0 +1,3 @@
+400 12 5 plastic
+290 6 5 porcelain
+250 11 5 glass
