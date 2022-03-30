@@ -20,6 +20,9 @@ Glut contains the GLUT library projects
 
 Figures contain a code for drawing a figures in C++(Qt)
 
+--------------------------------------------------------------------------------
+Used technologies:Qt5, Std C++
+
 [![](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](C++/)
 ----------------------------------------------------------------------------------------------------------
 ![](https://tokei.rs/b1/github/cppshizoidS/Learning-Cpp?category=code)
