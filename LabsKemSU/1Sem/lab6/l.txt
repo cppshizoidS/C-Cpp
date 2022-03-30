@@ -1,0 +1,4 @@
+red 176 Russia 10
+yellow 194 China 14
+green 138 USA 13
+red 145 Germany 15
