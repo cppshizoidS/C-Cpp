@@ -1,5 +1,5 @@
 # Learning
-Learning of C++.
+Repository with project for learning a C++.
 ----------------
 Hello my name is Alex.
 I'm a beginner in programming.
