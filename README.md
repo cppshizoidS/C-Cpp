@@ -14,6 +14,8 @@ Algorithms contains a basic algorithms(Searchs, etc)
 
 Qt5 contains the basic programs on Qt5
 
+Neuro_net contains a simple Neuro_Net realisation in C++
+
 Glut contains the GLUT library projects
 
 [![](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](C++/)
