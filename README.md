@@ -21,6 +21,8 @@ Neuro_net contains a simple Neuro_Net realisation in C++
 
 Glut contains the GLUT library projects
 
+SFML contains a tetris game using SFML library
+
 Figures contain a code for drawing a figures in C++(Qt)
 
 --------------------------------------------------------------------------------
