@@ -23,7 +23,7 @@ Glut contains the GLUT library projects
 
 SFML contains a tetris game using SFML library
 
-Figures contain a code for drawing a figures in C++(Qt)
+Figures contain a code of my program for drawing a figures in C++(Qt)
 
 --------------------------------------------------------------------------------
 Used technologies:Qt5, Glut, SFML, Std C++
