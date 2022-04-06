@@ -45,6 +45,33 @@ int main(){
             int y = pos.y / w;
 
             Event e;
+            while (app.pollEvent(e)){
+                if (e.type == Event::Closed)
+                    app.close();
+
+                //mouse click
+                if (e.type == Event::MouseButtonPressed)
+                    //if left - open a cell
+                    if (e.key.code == Mouse::Left) gridView[x][y] = gridLogic[x][y];
+                    //if right click - draw a flag
+                    else if (e.key.code == Mouse::Right) gridView[x][y] == 11;
+            }
+
+            app.clear(Color::White);
+
+            for (int i = 1; i<=10; i++)
+                for (int j = 1; j <= 10; j++)
+                {
+                    if (gridView[x][y] == 9) gridView[i][j] = gridLogic[i][j];
+                    //square from sprite
+                    s.setTextureRect(IntRect(gridView[i][j] * w, 0, w, w));
+                    // position
+                    s.setPosition(i*w, j*w);
+                    //draw
+                    app.draw(s);
+                }
+            //display render
+            app.display();
         }
     }
     return 0;
