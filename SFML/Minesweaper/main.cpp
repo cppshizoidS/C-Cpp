@@ -31,7 +31,21 @@ int main(){
             if (gridLogic[i][j] == 9) continue;
             if (gridLogic[i+1][j] == 9) n++;
             if (gridLogic[i][j+1] == 9) n++;
-            if (gridLogic[i - 1][j]==9) n++;
+            if (gridLogic[i-1][j] == 9) n++;
+            if (gridLogic[i][j-1] == 9) n++;
+            if (gridLogic[i+1][j+1] == 9) n++;
+            if (gridLogic[i-1][j-1] == 9) n++;
+            if (gridLogic[i-1][j+1] == 9) n++;
+            if (gridLogic[i+1][j-1] == 9) n++;
+            gridLogic[i][j] = n;
+        }
+        while (app.isOpen()){
+            Vector2i pos = Mouse::getPosition(app);
+            int x = pos.x / w;
+            int y = pos.y / w;
+
+            Event e;
         }
     }
+    return 0;
 }
