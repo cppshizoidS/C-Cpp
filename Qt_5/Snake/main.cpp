@@ -1,14 +1,14 @@
-#include <QAplication>
-#inclide "Snake.h"
+#include <QApplication>
+#include "Snake.h"
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[]) {
 
-    QApplication app(argc, argv);
+  QApplication app(argc, argv);
 
-    Snake window;
-    
-    window.setWindowTitle("Snake");
-    window.show();
+  Snake window;
 
-    return app.exec();
+  window.setWindowTitle("Snake");
+  window.show();
+
+  return app.exec();
 }
