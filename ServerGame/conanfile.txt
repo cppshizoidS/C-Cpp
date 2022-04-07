@@ -1,0 +1,9 @@
+[requires]
+gtest/1.11.0
+sqlite_orm/1.7
+restinio/0.6.14
+tl-expected/1.0.0
+
+[generators]
+cmake
+
