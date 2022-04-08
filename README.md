@@ -1,4 +1,4 @@
-# Cpp
+# C/Cpp
 Repository with project for learning a C++.
 ----------------
 Hello my name is Alex.
