@@ -23,6 +23,8 @@ SFML contains a tetris game and minesweaper using SFML library
 
 Figures contain a code of my program for drawing a figures in C++(Qt)
 
+Snake_C contain a snake game writed on C language using only std libs
+
 --------------------------------------------------------------------------------
 Used technologies:Qt5, Glut, SFML, Std C++
 
