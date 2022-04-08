@@ -26,7 +26,7 @@ Figures contain a code of my program for drawing a figures in C++(Qt)
 Snake_C contain a snake game writed on C language using only std libs
 
 --------------------------------------------------------------------------------
-Used technologies:Qt5, Glut, SFML, Std C++
+Used technologies:Qt5, Glut, SFML, Std C/C++
 
 [![](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](C++/)
 ----------------------------------------------------------------------------------------------------------
