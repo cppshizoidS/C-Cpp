@@ -11,7 +11,7 @@ Qt5 contains the basic programs on Qt5
 
 Neuro_net contains a simple Neuro_Net realisation in C++
 
-Glut contains the GLUT library projects
+OpenGL contains the OpenGl projects
 
 SFML contains a tetris game and minesweaper using SFML library
 
