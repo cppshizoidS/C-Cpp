@@ -1,0 +1,8 @@
+[requires]
+ftxui/2.0.0
+fmt/8.1.1
+doxygen/1.9.2
+
+[generators]
+cmake
+
