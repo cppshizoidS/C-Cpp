@@ -1,1 +1,1 @@
-a project with cude rotation using OpenGL and QT
+A project of cude rotation using OpenGL and QT
