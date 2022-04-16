@@ -10,7 +10,6 @@ Cross Platform C++/SFML Sorting Visualization
 - Selection sort
 - Merge sort
 - Radix sort
-- ...?
 
 # How to use
 ### Keybinds:
