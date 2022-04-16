@@ -67,7 +67,3 @@ If you wish to update SFML you can download the latest version directly from the
 ## Credits
 Skeleton project folder by lutrarutra https://github.com/lutrarutra/SFML-Project-Template
 
-## To Do:
-- Stop sorting mid-sorting
-- N. of columns as user input
-- More algorithms?
