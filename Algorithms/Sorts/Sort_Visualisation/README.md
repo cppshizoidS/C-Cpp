@@ -1,4 +1,4 @@
-# sort-visualizer
+# Sort-visualizer
 Cross Platform C++/SFML Sorting Visualization
 
 ![Example Image](https://i.imgur.com/uDj7wBr.png)
