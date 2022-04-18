@@ -1,13 +1,13 @@
-#include <iostream> //ñîðòèðîâêà ïóçûðüêîì
+#include <iostream>
 using namespace std;
 
 int main()
 {
-    int* arr;   //óêàçàòåëü íà ïåðåìåííóþ ãäå þóäåò õðàíèòüñÿ ìàññèâ
-    int size;   //ïåðåìåííàÿ ñ ðàçìåðîì ìàññèâà
+    int* arr;   
+    int size;   
 
     cout << "n = "; 
-    cin >> size;    //ââîä ðàçìåðà ìàññèâà
+    cin >> size;    
 
     if (size <= 0) {
         cerr << "Invalid size" << endl;
