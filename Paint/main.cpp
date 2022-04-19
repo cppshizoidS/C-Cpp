@@ -35,3 +35,40 @@ std::vector<Dot> dots;		// store all the points until clear
 std::list<int> undoHistory; // record for undo, maximum 20 shapes in history
 std::list<int> redoHistory; // record for redo, maximum 20 shapes in history
 std::vector<Dot> redoDots;  // store the dots after undo temporaly
+
+void display(void)
+{
+	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT);
+	glPointSize(2);
+	glBegin(GL_POINTS);
+	for (unsigned int i = 0; i < dots.size(); i++)
+	{
+		glColor3f(dots[i].getR(), dots[i].getG(), dots[i].getB());
+		glVertex2i(dots[i].getX(), dots[i].getY());
+	}
+	glEnd();
+	glutSwapBuffers();
+}
+
+void clear()
+{
+	dots.clear();
+	undoHistory.clear();
+	redoDots.clear();
+	redoHistory.clear();
+	glClear(GL_COLOR_BUFFER_BIT);
+	glutSwapBuffers();
+	time_t rawtime;
+	struct tm *timeinfo;
+	time(&rawtime);
+	timeinfo = localtime(&rawtime);
+	std::cout << asctime(timeinfo)
+			  << "[Info] The window and the history are cleared successfully.\n";
+}
+
+void quit()
+{
+	std::cout << "Thank you for using this Paint tool! Goodbye!" << std::endl;
+	exit(0);
+}
