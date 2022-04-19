@@ -139,3 +139,58 @@ void drawBrush(int x, int y)
 		drawDot(randX, randY);
 	}
 }
+void drawLine(int x1, int y1, int x2, int y2)
+{
+	bool changed = false;
+	// Bresenham's line algorithm is only good when abs(dx) >= abs(dy)
+	// So when abs(dx) < abs(dy), change axis x and y
+	if (abs(x2 - x1) < abs(y2 - y1))
+	{
+		int tmp1 = x1;
+		x1 = y1;
+		y1 = tmp1;
+		int tmp2 = x2;
+		x2 = y2;
+		y2 = tmp2;
+		changed = true;
+	}
+	int dx = x2 - x1;
+	int dy = y2 - y1;
+	int yi = 1;
+	int xi = 1;
+	if (dy < 0)
+	{
+		yi = -1;
+		dy = -dy;
+	}
+	if (dx < 0)
+	{
+		xi = -1;
+		dx = -dx;
+	}
+	int d = 2 * dy - dx;
+	int incrE = dy * 2;
+	int incrNE = 2 * dy - 2 * dx;
+
+	int x = x1, y = y1;
+	if (changed)
+		drawDot(y, x);
+	else
+		drawDot(x, y);
+	while (x != x2)
+	{
+		if (d <= 0)
+			d += incrE;
+		else
+		{
+			d += incrNE;
+			y += yi;
+		}
+		x += xi;
+		if (changed)
+			drawDot(y, x);
+		else
+			drawDot(x, y);
+	}
+}
+
