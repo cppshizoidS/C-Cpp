@@ -72,3 +72,31 @@ void quit()
 	std::cout << "Thank you for using this Paint tool! Goodbye!" << std::endl;
 	exit(0);
 }
+
+void undo()
+{
+	if (undoHistory.size() > 0)
+	{
+		if (undoHistory.back() != dots.size() && redoHistory.back() != dots.size())
+		{
+			redoHistory.push_back(dots.size());
+		}
+		int numRemove = dots.size() - undoHistory.back();
+		for (int i = 0; i < numRemove; i++)
+		{
+			redoDots.push_back(dots.back());
+			dots.pop_back();
+		}
+		redoHistory.push_back(undoHistory.back());
+		undoHistory.pop_back();
+	}
+	else
+	{
+		time_t rawtime;
+		struct tm *timeinfo;
+		time(&rawtime);
+		timeinfo = localtime(&rawtime);
+		std::cout << asctime(timeinfo)
+				  << "[Warning] Cannot undo. This is the first record in the history.\n";
+	}
+}
