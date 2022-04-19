@@ -72,7 +72,6 @@ void quit()
 	std::cout << "Thank you for using this Paint tool! Goodbye!" << std::endl;
 	exit(0);
 }
-
 void undo()
 {
 	if (undoHistory.size() > 0)
@@ -98,5 +97,45 @@ void undo()
 		timeinfo = localtime(&rawtime);
 		std::cout << asctime(timeinfo)
 				  << "[Warning] Cannot undo. This is the first record in the history.\n";
+	}
+}
+
+void redo()
+{
+	if (redoHistory.size() > 1)
+	{
+		undoHistory.push_back(redoHistory.back());
+		redoHistory.pop_back();
+		int numRemove = redoHistory.back() - dots.size();
+		for (int i = 0; i < numRemove; i++)
+		{
+			dots.push_back(redoDots.back());
+			redoDots.pop_back();
+		}
+	}
+	else
+	{
+		time_t rawtime;
+		struct tm *timeinfo;
+		time(&rawtime);
+		timeinfo = localtime(&rawtime);
+		std::cout << asctime(timeinfo)
+				  << "[Warning] Cannot redo. This is the last record in the history.\n";
+	}
+}
+
+void drawDot(int mousex, int mousey)
+{
+	Dot newDot(mousex, window_h - mousey, isEraser ? 1.0 : red, isEraser ? 1.0 : green, isEraser ? 1.0 : blue);
+	dots.push_back(newDot);
+}
+
+void drawBrush(int x, int y)
+{
+	for (int i = 0; i < brushSize; i++)
+	{
+		int randX = rand() % (brushSize + 1) - brushSize / 2 + x;
+		int randY = rand() % (brushSize + 1) - brushSize / 2 + y;
+		drawDot(randX, randY);
 	}
 }
