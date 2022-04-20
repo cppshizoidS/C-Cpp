@@ -278,3 +278,144 @@ void erase(int x, int y)
 		}
 	}
 }
+
+void keyboard(unsigned char key, int xIn, int yIn)
+{
+	isSecond = false;
+	switch (key)
+	{
+	case 'q':
+	case 27: // 27 is the esc key
+		quit();
+		break;
+	case 'c':
+		clear();
+		break;
+	case '+':
+		if (shape == 5 && !isEraser)
+		{
+			if (brushSize < 16)
+				brushSize += 4;
+			else
+			{
+				time_t rawtime;
+				struct tm *timeinfo;
+				time(&rawtime);
+				timeinfo = localtime(&rawtime);
+				std::cout << asctime(timeinfo)
+						  << "[Warning] Airbrush's size cannot be larger. It is already the largest.\n";
+			}
+		}
+		else if (isEraser)
+		{
+			if (eraserSize < 10)
+				eraserSize += 4;
+			else
+			{
+				time_t rawtime;
+				struct tm *timeinfo;
+				time(&rawtime);
+				timeinfo = localtime(&rawtime);
+				std::cout << asctime(timeinfo)
+						  << "[Warning] Eraser's size cannot be larger. It is already the largest.\n";
+			}
+		}
+		break;
+	case '-':
+		if (shape == 5 && !isEraser)
+		{
+			if (brushSize > 4)
+				brushSize -= 4;
+			else
+			{
+				time_t rawtime;
+				struct tm *timeinfo;
+				time(&rawtime);
+				timeinfo = localtime(&rawtime);
+				std::cout << asctime(timeinfo)
+						  << "[Warning] Airbrush's size cannot be smaller. It is already the smallest.\n";
+			}
+		}
+		else if (isEraser)
+		{
+			if (eraserSize > 2)
+				eraserSize -= 4;
+			else
+			{
+				time_t rawtime;
+				struct tm *timeinfo;
+				time(&rawtime);
+				timeinfo = localtime(&rawtime);
+				std::cout << asctime(timeinfo)
+						  << "[Warning] Eraser's size cannot be smaller. It is already the smallest.\n";
+			}
+		}
+		break;
+	case 'u':
+		undo();
+		break;
+	case 'r':
+		redo();
+		break;
+	}
+}
+
+void mouse(int bin, int state, int x, int y)
+{
+	if (bin == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
+	{
+		if (isRandom)
+		{
+			srand(time(NULL));
+			red = float(rand()) / float(RAND_MAX);
+			green = float(rand()) / float(RAND_MAX);
+			blue = float(rand()) / float(RAND_MAX);
+		}
+		if (isEraser)
+		{
+			undoHistory.push_back(dots.size());
+			erase(x, y);
+		}
+		else
+		{
+			if (shape == 1)
+			{
+				undoHistory.push_back(dots.size());
+				if (isRadial)
+					drawRadialBrush(x, y);
+				else
+					drawDot(x, y);
+			}
+			else if (shape == 5)
+			{
+				undoHistory.push_back(dots.size());
+				drawBrush(x, y);
+			}
+			else
+			{
+				if (!isSecond)
+				{
+					tmpx = x;
+					tmpy = y;
+					isSecond = true;
+				}
+				else
+				{
+					if (undoHistory.back() != dots.size())
+						undoHistory.push_back(dots.size());
+					if (shape == 2)
+						drawLine(tmpx, tmpy, x, y);
+					else if (shape == 3)
+						drawRectangle(tmpx, tmpy, x, y);
+					else if (shape == 4)
+						drawCircle(tmpx, tmpy, x, y);
+					isSecond = false;
+				}
+			}
+		}
+		if (undoHistory.size() > 20)
+		{
+			undoHistory.pop_front();
+		}
+	}
+}
