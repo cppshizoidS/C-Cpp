@@ -419,3 +419,21 @@ void mouse(int bin, int state, int x, int y)
 		}
 	}
 }
+
+void motion(int x, int y)
+{
+	if (isEraser)
+		erase(x, y);
+	else
+	{
+		if (shape == 1)
+		{
+			if (isRadial)
+				drawRadialBrush(x, y);
+			else
+				drawDot(x, y);
+		}
+		if (shape == 5)
+			drawBrush(x, y);
+	}
+}
