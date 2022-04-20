@@ -248,3 +248,22 @@ void drawCircle(int x1, int y1, int x2, int y2)
 		}
 	}
 }
+
+void drawRadialBrush(int x, int y)
+{
+	int xc = glutGet(GLUT_WINDOW_WIDTH) / 2;
+	int yc = glutGet(GLUT_WINDOW_HEIGHT) / 2;
+	int dx, dy;
+
+	dx = xc - x;
+	dy = yc - y;
+
+	drawDot(xc + dx, yc + dy);
+	drawDot(xc - dx, yc + dy);
+	drawDot(xc + dx, yc - dy);
+	drawDot(xc - dx, yc - dy);
+	drawDot(xc + dy, yc + dx);
+	drawDot(xc - dy, yc + dx);
+	drawDot(xc + dy, yc - dx);
+	drawDot(xc - dy, yc - dx);
+}
