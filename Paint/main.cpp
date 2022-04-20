@@ -194,3 +194,57 @@ void drawLine(int x1, int y1, int x2, int y2)
 	}
 }
 
+void drawRectangle(int x1, int y1, int x2, int y2)
+{
+	if (x1 < x2 && y1 < y2)
+	{
+		drawLine(x1, y1, x2, y1);
+		drawLine(x2, y1, x2, y2);
+		drawLine(x2, y2, x1, y2);
+		drawLine(x1, y2, x1, y1);
+	}
+	else
+	{
+		time_t rawtime;
+		struct tm *timeinfo;
+		time(&rawtime);
+		timeinfo = localtime(&rawtime);
+		std::cout << asctime(timeinfo)
+				  << "[Warning] The first click should be the top-left corner, the second click should be bottom-right corner.\n";
+	}
+}
+/**
+ * Midpoint circle algorithm
+ */
+void drawCircle(int x1, int y1, int x2, int y2)
+{
+	int r = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
+	double d;
+	int x, y;
+
+	x = 0;
+	y = r;
+	d = 1.25 - r;
+
+	while (x <= y)
+	{
+		drawDot(x1 + x, y1 + y);
+		drawDot(x1 - x, y1 + y);
+		drawDot(x1 + x, y1 - y);
+		drawDot(x1 - x, y1 - y);
+		drawDot(x1 + y, y1 + x);
+		drawDot(x1 - y, y1 + x);
+		drawDot(x1 + y, y1 - x);
+		drawDot(x1 - y, y1 - x);
+		x++;
+		if (d < 0)
+		{
+			d += 2 * x + 3;
+		}
+		else
+		{
+			y--;
+			d += 2 * (x - y) + 5;
+		}
+	}
+}
