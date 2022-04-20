@@ -267,3 +267,14 @@ void drawRadialBrush(int x, int y)
 	drawDot(xc + dy, yc - dx);
 	drawDot(xc - dy, yc - dx);
 }
+
+void erase(int x, int y)
+{
+	for (int i = -eraserSize; i <= eraserSize; i++)
+	{
+		for (int j = -eraserSize; j <= eraserSize; j++)
+		{
+			drawDot(x + i, y + j);
+		}
+	}
+}
