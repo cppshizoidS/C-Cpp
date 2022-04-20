@@ -139,6 +139,7 @@ void drawBrush(int x, int y)
 		drawDot(randX, randY);
 	}
 }
+
 void drawLine(int x1, int y1, int x2, int y2)
 {
 	bool changed = false;
@@ -194,6 +195,12 @@ void drawLine(int x1, int y1, int x2, int y2)
 	}
 }
 
+/**
+ * We can use drawLine function to draw the rectangle
+ * 
+ * Top-left corner specified by the first click,
+ * and the bottom-right corner specified by a second click
+ */
 void drawRectangle(int x1, int y1, int x2, int y2)
 {
 	if (x1 < x2 && y1 < y2)
@@ -213,6 +220,7 @@ void drawRectangle(int x1, int y1, int x2, int y2)
 				  << "[Warning] The first click should be the top-left corner, the second click should be bottom-right corner.\n";
 	}
 }
+
 /**
  * Midpoint circle algorithm
  */
@@ -436,4 +444,254 @@ void motion(int x, int y)
 		if (shape == 5)
 			drawBrush(x, y);
 	}
+}
+
+void reshape(int w, int h)
+{
+	window_w = w;
+	window_h = h;
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluOrtho2D(0, w, 0, h);
+
+	glMatrixMode(GL_MODELVIEW);
+	glViewport(0, 0, w, h);
+}
+
+void processMainMenu(int value)
+{
+	switch (value)
+	{
+	case 0:
+		quit();
+		break;
+	case 1:
+		clear();
+		break;
+	case 2:
+		undo();
+		break;
+	case 3:
+		redo();
+		break;
+	}
+}
+
+void processBrushSizeMenu(int value)
+{
+	shape = 5;
+	isEraser = false;
+	brushSize = value;
+	glutSetCursor(GLUT_CURSOR_CROSSHAIR);
+}
+
+void processColourMenu(int value)
+{
+	isSecond = false;
+	isEraser = false;
+	isRandom = false;
+
+	switch (value)
+	{
+	case 1: // red
+		red = 1.0;
+		green = 0.0;
+		blue = 0.0;
+		break;
+	case 2: // green
+		red = 0.0;
+		green = 1.0;
+		blue = 0.0;
+		break;
+	case 3: // blue
+		red = 0.0;
+		green = 0.0;
+		blue = 1.0;
+		break;
+	case 4: // purple
+		red = 0.5;
+		green = 0.0;
+		blue = 0.5;
+		break;
+	case 5: // yellow
+		red = 1.0;
+		green = 1.0;
+		blue = 0.0;
+		break;
+	case 6: // random
+		isRandom = true;
+		break;
+	}
+}
+
+void processShapeMenu(int value)
+{
+	shape = value;
+	isEraser = false;
+	isSecond = false;
+	isRadial = false;
+
+	switch (shape)
+	{
+	case 1:
+		glutSetCursor(GLUT_CURSOR_RIGHT_ARROW);
+		break;
+	case 2:
+	case 3:
+	case 4:
+		glutSetCursor(GLUT_CURSOR_CROSSHAIR);
+		break;
+	}
+}
+
+void processEraserSizeMenu(int value)
+{
+	glutSetCursor(GLUT_CURSOR_RIGHT_ARROW);
+	eraserSize = value;
+	isEraser = true;
+}
+
+void processRadicalBrushMenu(int value)
+{
+	isRadial = value == 1 ? true : false;
+}
+
+void createOurMenu()
+{
+	int colourMenu = glutCreateMenu(processColourMenu);
+	glutAddMenuEntry("Red", 1);
+	glutAddMenuEntry("Green", 2);
+	glutAddMenuEntry("Blue", 3);
+	glutAddMenuEntry("Purple", 4);
+	glutAddMenuEntry("Yellow", 5);
+	glutAddMenuEntry("Random", 6);
+
+	int sizeMenu = glutCreateMenu(processBrushSizeMenu);
+	glutAddMenuEntry("4px", 4);
+	glutAddMenuEntry("8px", 8);
+	glutAddMenuEntry("12px", 12);
+	glutAddMenuEntry("16px", 16);
+
+	int shapeMenu = glutCreateMenu(processShapeMenu);
+	glutAddMenuEntry("Point", 1);
+	glutAddMenuEntry("Line", 2);
+	glutAddMenuEntry("Rectangle", 3);
+	glutAddMenuEntry("Circle", 4);
+	glutAddSubMenu("Airbrush", sizeMenu);
+
+	int eraserSizeMenu = glutCreateMenu(processEraserSizeMenu);
+	glutAddMenuEntry("Small", 2);
+	glutAddMenuEntry("Medium", 6);
+	glutAddMenuEntry("Large", 10);
+
+	int radicalBrushMenu = glutCreateMenu(processRadicalBrushMenu);
+	glutAddMenuEntry("True", 1);
+	glutAddMenuEntry("False", 2);
+
+	int main_id = glutCreateMenu(processMainMenu);
+	glutAddSubMenu("Colour", colourMenu);
+	glutAddSubMenu("Shapes", shapeMenu);
+	glutAddSubMenu("Radical Paint Brush", radicalBrushMenu);
+	glutAddSubMenu("Eraser", eraserSizeMenu);
+	glutAddMenuEntry("Undo", 2);
+	glutAddMenuEntry("Redo", 3);
+	glutAddMenuEntry("Clear", 1);
+	glutAddMenuEntry("Quit", 0);
+	glutAttachMenu(GLUT_RIGHT_BUTTON);
+}
+
+void init(void)
+{
+	/* background color */
+	glClearColor(1.0, 1.0, 1.0, 1.0);
+	glColor3f(red, green, blue);
+
+	glMatrixMode(GL_PROJECTION);
+	gluOrtho2D(0.0, window_w, 0.0, window_h);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+}
+
+void FPS(int val)
+{
+	glutPostRedisplay();
+	glutTimerFunc(0, FPS, 0);
+}
+
+void callbackInit()
+{
+	glutDisplayFunc(display);
+	glutReshapeFunc(reshape);
+	glutKeyboardFunc(keyboard);
+	glutMouseFunc(mouse);
+	glutMotionFunc(motion);
+	glutTimerFunc(17, FPS, 0);
+}
+
+void printGuide()
+{
+	std::cout << "#########################################################################\n"
+			  << "#                    Welcome to use this Paint tool!                    #\n"
+			  << "#########################################################################\n"
+			  << "A list of commands:\n"
+			  << "Right click\t"
+			  << "-> show menu\n"
+			  << "Left click\t"
+			  << "-> choose option\n"
+			  << "Menu \"Colour\"\t"
+			  << "-> You can choose Red, Green, Blue, Yellow or Random, the default color is Red.\n"
+			  << "Menu \"Shapes\"\t"
+			  << "-> The default shape is Point.\n"
+			  << "\tPoint\t\t"
+			  << "-> draw a dot at the point clicked with the mouse. Clicking and dragging will draw points constantly like free-form drawing.\n"
+			  << "\tLine\t\t"
+			  << "-> draw a linebetween two subseauently clicked points. (Bresenham's algorithm is used here.)\n"
+			  << "\tRectangle\t"
+			  << "-> draw a rectangle with top-left corner specified by the first click and the bottom-right corner specified by a second click. If the second click is bottom-left, top-right or top-left comparing to the first click, a warning will show in the console.\n"
+			  << "\tCircle\t\t"
+			  << "-> draw a circle centered at the position of the first click, with its radius set by a second click.\n"
+			  << "\tAirbrush\t"
+			  << "-> draw multiple points as brush around the clicked point. There are four options of size.\n"
+			  << "Menu \"Radical..\""
+			  << "-> draw multiple points as brush around the centre point of the document. You can choose True or False. Only useful when shape is point. The default option is false. After choosing point in shape, it becomes False.\n"
+			  << "Menu \"Eraser\"\t"
+			  << "-> erase the points by clicking and dragging.\n"
+			  << "Menu \"Undo\"\t"
+			  << "-> undo, the history can keep maximum 20 records.\n"
+			  << "Menu \"Redo\"\t"
+			  << "->  redo, the history can keep maximum 20 records.\n"
+			  << "Menu \"Clear\"\t"
+			  << "-> clear all the points and clear the history.\n"
+			  << "Menu \"Quit\"\t"
+			  << "-> close the window.\n"
+			  << "Keyboard 'q'\t"
+			  << "-> close the window.\n"
+			  << "Keyboard 'esc'\t"
+			  << "-> close the window.\n"
+			  << "Keyboard 'c'\t"
+			  << "-> clear all the points and clear the history.\n"
+			  << "Keyboard '+'\t"
+			  << "-> larger size of eraser or brush.\n"
+			  << "Keyboard '-'\t"
+			  << "-> smaller size of eraser or brush.\n"
+			  << "Keyboard 'u'\t"
+			  << "-> undo, the history can keep maximum 20 records.\n"
+			  << "Keyboard 'r'\t"
+			  << "-> redo, the history can keep maximum 20 records.\n"
+			  << "################################# Paint #################################" << std::endl;
+}
+
+int main(int argc, char **argv)
+{
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
+	glutInitWindowSize(window_w, window_h);
+	glutInitWindowPosition(100, 100);
+	glutCreateWindow("Paint");
+	callbackInit();
+	init();
+	printGuide();
+	createOurMenu();
+	glutMainLoop();
+	return (0);
 }
