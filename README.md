@@ -1,6 +1,9 @@
 # C/Cpp
 Repository with project for learning a C and C++.
 ----------------
+
+Algorithms contains a different algorithms in C/C++
+
 Simple Programs contains a basics of C++
 
 Det Of Matrix contains a program for find a determinant of matrix
