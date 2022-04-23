@@ -5,7 +5,6 @@
 #include <iostream>
 #include <algorithm>
 
-//SFML REQUIRED TO LAUNCH THIS CODE
 
 #define WINDOW_WIDTH 1920
 #define WINDOW_HEIGHT 1000
