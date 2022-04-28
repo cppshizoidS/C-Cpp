@@ -1,20 +1,7 @@
-/**
- * @file
- * @brief [Modified binary search algorithm](https://arxiv.org/abs/1406.1677)
- */
 #include <stdio.h>
 #include <stdlib.h>
 
-/** This function does Binary search for `x` in `i`-th row from `j_low` to
- * `j_high`.
- * @param mat 2D matrix to search within
- * @param i row to search in
- * @param j_low start column index
- * @param j_high end column index
- * @param x value to search for
- * @return column where `x` was found
- * @return -1 if value not found
- */
+
 int binarySearch(const int **mat, int i, int j_low, int j_high, int x)
 {
     while (j_low <= j_high)
@@ -38,13 +25,6 @@ int binarySearch(const int **mat, int i, int j_low, int j_high, int x)
     return -1;
 }
 
-/** Function to perform binary search on the mid values of row to get the
- * desired pair of rows where the element can be found
- * @param [in] mat matrix to search for the value in
- * @param n number of rows in the matrix
- * @param m number of columns in the matrix
- * @param x value to search for
- */
 void modifiedBinarySearch(const int **mat, int n, int m, int x)
 {  // If Single row matrix
     if (n == 1)
@@ -53,8 +33,6 @@ void modifiedBinarySearch(const int **mat, int n, int m, int x)
         return;
     }
 
-    // Do binary search in middle column.
-    // Condition to terminate the loop when the 2 desired rows are found.
     int i_low = 0, i_high = n - 1, j_mid = m / 2;
     while ((i_low + 1) < i_high)
     {
@@ -93,7 +71,6 @@ void modifiedBinarySearch(const int **mat, int n, int m, int x)
         binarySearch(mat, i_low + 1, j_mid + 1, m - 1, x);
 }
 
-/** Main function */
 int main()
 {
     int x;     // element to be searched
