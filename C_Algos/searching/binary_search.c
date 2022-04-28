@@ -1,23 +1,6 @@
-/**
- * @file
- * @brief Program to perform [binary
- * search](https://en.wikipedia.org/wiki/Binary_search_algorithm) of a target
- * value in a given *sorted* array.
- * @authors [James McDermott](https://github.com/theycallmemac) - recursive
- * algorithm
- * @authors [Krishna Vedala](https://github.com/kvedala) - iterative algorithm
- */
 #include <assert.h>
 #include <stdio.h>
 
-/** Recursive implementation
- * \param[in] arr array to search
- * \param l left index of search range
- * \param r right index of search range
- * \param x target value to search for
- * \returns location of x assuming array arr[l..r] is present
- * \returns -1 otherwise
- */
 int binarysearch1(const int *arr, int l, int r, int x)
 {
     if (r >= l)
@@ -40,14 +23,7 @@ int binarysearch1(const int *arr, int l, int r, int x)
     return -1;
 }
 
-/** Iterative implementation
- * \param[in] arr array to search
- * \param l left index of search range
- * \param r right index of search range
- * \param x target value to search for
- * \returns location of x assuming array arr[l..r] is present
- * \returns -1 otherwise
- */
+
 int binarysearch2(const int *arr, int l, int r, int x)
 {
     int mid = l + (r - l) / 2;
