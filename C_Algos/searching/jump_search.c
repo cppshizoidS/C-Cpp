@@ -1,26 +1,9 @@
-/**
- * @file jump_search.c
- * @brief Implementation of [jump
- * search](https://en.wikipedia.org/wiki/Jump_search) algorithm.
- */
 #include <assert.h>
 #include <math.h>
 #include <stdio.h>
 
-/**
- * @brief Macro to return the minimum of two values
- */
 #define min(X, Y) ((X) < (Y) ? (X) : (Y))
 
-/**
- * @brief Implement Jump-search algorithm
- *
- * @param [in] arr Array to search within
- * @param x value to search for
- * @param n length of array
- * @return index where the value was found
- * @return -1 if value not found
- */
 int jump_search(const int *arr, int x, size_t n)
 {
     int step = floor(sqrt(n));
@@ -75,9 +58,6 @@ void test()
     printf("passed\n");
 }
 
-/**
- * @brief Main function
- */
 int main()
 {
     test();
