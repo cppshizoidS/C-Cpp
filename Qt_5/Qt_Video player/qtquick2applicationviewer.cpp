@@ -1,3 +1,5 @@
+#include "qtquick2applicationviewer.h"
+
 #include <QtCore/QCoreApplication>
 #include <QtCore/QDir>
 #include <QtQml/QQmlEngine>
