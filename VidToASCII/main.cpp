@@ -1,11 +1,9 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <fstream>
-#include <windows.h>
 #include <filesystem>
 #include <chrono>
 #include <thread>
-#include <winuser.h>
 #include <cwchar>
 
 using namespace cv;
