@@ -22,6 +22,8 @@ Figures contain a code of my program for drawing a figures in C++(Qt)
 
 Snake_C contain a snake game writed on C language using only std libs
 
+Vid_To_ASCII contain a program to convert video to ASCII using OpenCV
+
 --------------------------------------------------------------------------------
 Used technologies:Qt5, OpenGL, Glut, SFML, STL, Std C/C++
 
