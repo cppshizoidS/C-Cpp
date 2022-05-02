@@ -21,7 +21,6 @@ typedef struct DirectedPoint {
 } DirectedPoint;
 
 // Struct that holds info about one snake.
-// It is perfectly possible to implement several snakes (several players)
 typedef struct Snake {
 	DirectedPoint head; // Both head and tail must be directed to move snake
 	DirectedPoint tail;
