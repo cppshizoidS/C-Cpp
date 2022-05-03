@@ -16,7 +16,7 @@ Neuro_net contains a simple Neuro_Net realisation in C++
 
 OpenGL contains the OpenGl projects
 
-SFML contains a tetris game and minesweaper using SFML library
+SFML contains a tetris game and minesweaper using SFML library also contain an Game Engine
 
 Figures contain a code of my program for drawing a figures in C++(Qt)
 
