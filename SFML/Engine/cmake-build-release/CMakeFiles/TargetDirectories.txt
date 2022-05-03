@@ -1,3 +1,0 @@
-C:/CLionProjects/pseudo3DEngine/cmake-build-release/CMakeFiles/FPSOnline.dir
-C:/CLionProjects/pseudo3DEngine/cmake-build-release/CMakeFiles/edit_cache.dir
-C:/CLionProjects/pseudo3DEngine/cmake-build-release/CMakeFiles/rebuild_cache.dir
