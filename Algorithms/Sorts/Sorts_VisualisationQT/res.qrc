@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/sounds">
+        <file>sorting.mp3</file>
+        <file>complete.mp3</file>
+    </qresource>
+</RCC>
