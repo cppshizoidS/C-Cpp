@@ -8,7 +8,7 @@ Simple Programs contains a basics of C++
 
 Det Of Matrix contains a program for find a determinant of matrix
 
-Algorithms contains an algorithms(Searchs, etc) also contain a visualisation of sort unsing SFML
+Algorithms contains an algorithms(Searchs, etc) also contain a visualisation of sort unsing SFML and QT5
 
 Qt5 contains the basic programs on Qt5
 
