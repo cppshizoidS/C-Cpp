@@ -341,7 +341,6 @@ void SeaBattle::response(const QString & mes)
     }
     else if(mes.startsWith(tr("resu")))
     {
-        //мы стреляли
         QStringList coords = mes.split(" ");
         Navy::lState s = (Navy::lState)coords[1].toInt();
 
@@ -522,11 +521,9 @@ void SeaBattle::response(const QString & mes)
     {
         ui->txt->appendPlainText(mes);
         tray->showMessage(tr("Сообщение"), mes,  QSystemTrayIcon::Information, 2000);
-        //обрабатываем сообщение
     }
 }
 
-//компьютер стреляет по моему полю
 void SeaBattle::my_clicked(int x, int y)
 {
     game = true;
@@ -626,7 +623,6 @@ void SeaBattle::my_clicked(int x, int y)
 
 }
 
-//я стреляю по полю противника
 void SeaBattle::enemy_clicked(int x, int y)
 {
 
@@ -874,4 +870,3 @@ SeaBattle::~SeaBattle()
     delete ui;
 
 }
-
