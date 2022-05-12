@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/about.png</file>
+        <file>images/accept.png</file>
+        <file>images/add.png</file>
+        <file>images/anchor.png</file>
+        <file>images/chat.png</file>
+        <file>images/navy.png</file>
+        <file>images/close.png</file>
+        <file>images/connect.png</file>
+        <file>images/users.png</file>
+        <file>images/computer.png</file>
+        <file>images/batman.png</file>
+        <file>images/cursor.png</file>
+        <file>sound/mimo.wav</file>
+        <file>sound/popal.wav</file>
+        <file>images/ship3.png</file>
+        <file>images/ship4.png</file>
+        <file>images/ship1.png</file>
+        <file>images/ship2.png</file>
+        <file>images/sea.png</file>
+        <file>images/boom.png</file>
+        <file>images/splash.png</file>
+        <file>images/Island3min.png</file>
+        <file>Island3min.png</file>
+        <file>reflection.jpg</file>
+        <file>Skin1.png</file>
+        <file>Skin2.png</file>
+        <file>images/ship1v.png</file>
+        <file>images/ship2v.png</file>
+        <file>images/ship3v.png</file>
+        <file>images/ship4v.png</file>
+        <file>images/settle.png</file>
+        <file>images/death.png</file>
+        <file>images/background.png</file>
+    </qresource>
+</RCC>

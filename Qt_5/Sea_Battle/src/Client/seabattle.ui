@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SeaBattle</class>
+ <widget class="QMainWindow" name="SeaBattle">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1228</width>
+    <height>691</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Игра &quot;Морской Бой&quot;</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/images/navy.png</normaloff>:/images/navy.png</iconset>
+  </property>
+  <property name="statusTip">
+   <string/>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_5">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Игра</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="NavyPainter" name="wdg" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>670</width>
+            <height>440</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>670</width>
+            <height>440</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Чат</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0" colspan="2">
+           <widget class="QPlainTextEdit" name="txt">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLineEdit" name="txtMes"/>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="btnSend">
+            <property name="text">
+             <string>Отправить</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1228</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="mact_connect"/>
+    <addaction name="mact_start"/>
+    <addaction name="mact_listusers"/>
+    <addaction name="separator"/>
+    <addaction name="mact_exit"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Настройки</string>
+    </property>
+    <widget class="QMenu" name="menu_4">
+     <property name="title">
+      <string>Место боя</string>
+     </property>
+     <addaction name="actScene1"/>
+     <addaction name="actScene2"/>
+     <addaction name="actScene3"/>
+    </widget>
+    <addaction name="menu_4"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Помощь</string>
+    </property>
+    <addaction name="mact_about"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="mact_connect">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/connect.png</normaloff>:/images/connect.png</iconset>
+   </property>
+   <property name="text">
+    <string>Соединиться с сервером</string>
+   </property>
+   <property name="toolTip">
+    <string>Соединиться с сервером для начала игры</string>
+   </property>
+   <property name="statusTip">
+    <string>Соединиться с игровым сервером</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="mact_buildnavy">
+   <property name="text">
+    <string>Расставить корабли</string>
+   </property>
+   <property name="toolTip">
+    <string>Расставить корабли </string>
+   </property>
+   <property name="statusTip">
+    <string>Расставить корабли по местам</string>
+   </property>
+  </action>
+  <action name="mact_start">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/accept.png</normaloff>:/images/accept.png</iconset>
+   </property>
+   <property name="text">
+    <string>Начать игру</string>
+   </property>
+   <property name="statusTip">
+    <string>Начать игру в Морской Бой</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="mact_listusers">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/users.png</normaloff>:/images/users.png</iconset>
+   </property>
+   <property name="text">
+    <string>Просмотреть игроков</string>
+   </property>
+   <property name="toolTip">
+    <string>Просмотреть игроков, доступных для игры.</string>
+   </property>
+   <property name="statusTip">
+    <string>Просмотреть игроков, доступных для игры.</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="mact_exit">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/close.png</normaloff>:/images/close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Выход</string>
+   </property>
+   <property name="statusTip">
+    <string>Выход из программ &quot;Морской Бой&quot;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="mact_about">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/navy.png</normaloff>:/images/navy.png</iconset>
+   </property>
+   <property name="text">
+    <string>О программе</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actScene1">
+   <property name="text">
+    <string>Сцена №1</string>
+   </property>
+  </action>
+  <action name="actScene2">
+   <property name="text">
+    <string>Сцена №2</string>
+   </property>
+  </action>
+  <action name="actScene3">
+   <property name="text">
+    <string>Сцена №3</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>NavyPainter</class>
+   <extends>QWidget</extends>
+   <header>navypainter.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
