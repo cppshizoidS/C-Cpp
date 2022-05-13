@@ -1,42 +1,3 @@
-/**********************************************************************
-Implementation of the class handling the entire network. The
-training algorithm is mainly contained here.
-
-For latest version see: http://moonflare.com/code/nnetwork.php
-
-Copyright (c) 2003, Derrick Coetzee
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions
-are met:
-
-- Redistributions of source code must retain the above copyright
-  notice, this list of conditions and the following disclaimer.
-
-- Redistributions in binary form must reproduce the above copyright
-  notice, this list of conditions and the following disclaimer in
-  the documentation and/or other materials provided with the
-  distribution.
-
-- The name of Derrick Coetzee may not be used to endorse or promote
-  products derived from this software without specific prior
-  written permission.
-
-This software is provided by the copyright holders and contributors
-"as is" and any express or implied warranties, including, but not
-limited to, the implied warranties of merchantability and fitness
-for a particular purpose are disclaimed. In no event shall the
-copyright owner or contributors be liable for any direct, indirect,
-incidental, special, exemplary, or consequential damages
-(including, but not limited to, procurement of substitute goods or
-services; loss of use, data, or profits; or business interruption)
-however caused and on any theory of liability, whether in contract,
-strict liability, or tort (including negligence or otherwise)
-arising in any way out of the use of this software, even if advised
-of the possibility of such damage.
-**********************************************************************/
-
 #include "Net.h"
 
 #include <QMessageBox>
@@ -49,9 +10,6 @@ of the possibility of such damage.
 
 using namespace NeuralNetwork;
 
-// Creates a new feed-forward neural network with the given number of
-// layers with the specified number of nodes in each, and the learning
-// rate, momentum factor, and gain of the sigmoid function.
 Net::Net(int layers, int layerSizes[],
 	 real initLearningRate = 0.25,
 	 real initMomentumFactor = 0.9,
@@ -163,82 +121,59 @@ void Net::clearWeights()
 }
 
 
-// Saves weights for later restoring by restoreWeights. Only one
-// set of weights can be saved, usually the best seen so far.
+
 void Net::saveWeights()
 {
-    // Simply call saveWeights on each layer except the first
     for (int layerNum=1; layerNum < numLayers; layerNum++) {
 	layer[layerNum]->saveWeights();
     }
 }
 
-// Restores the set of weights most recently saved by saveWeights.
 void Net::restoreWeights()
 {
-    // Simply call restoreWeights on each layer except the first
     for (int layerNum=1; layerNum < numLayers; layerNum++) {
 	layer[layerNum]->restoreWeights();
     }
 }
 
-// Propagates inputs of the net all the way through to outputs
 void Net::propagate()
 {
-    // Simply call propagate on each layer except the first
     for (int layerNum=1; layerNum < numLayers; layerNum++) {
 	layer[layerNum]->propagate(gain);
     }
 }
 
-// Backpropagates output errors all the way back through the network
 void Net::backpropagate()
 {
-    // Simply call backpropagate on the layers in reverse order,
-    // except the first, thus driving error back from output to input.
     for (int layerNum=numLayers-1; layerNum > 0; layerNum--) {
 	layer[layerNum]->backpropagate(gain);
     }
 }
 
-// Computes and stores error of output layer and each of its components
 void Net::computeOutputError(real* target)
 {
-    // Just ask outputLayer to compute its error against target
     error = outputLayer->computeError(gain, target);
 }
 
-// Adjusts all weights in network to decrease error recorded by
-// previous calls to backpropagate or computeOutputError.
 void Net::adjustWeights()
 {
-    // Simply call adjustWeights on each layer except the first
     for (int layerNum=1; layerNum < numLayers; layerNum++) {
 	layer[layerNum]->adjustWeights(momentumFactor, learningRate);
     }
 }
 
-// Sets the values of the inputs to the network
 void Net::setInputs(real* inputs)
 {
-    // Sets output values of input-layer perceptrons, which is input
-    // of network
     inputLayer->setOutputs(inputs);
 }
 
-// Gets the outputs and places them in the array outputs
 void Net::getOutputs(real* outputs)
 {
-    // Gets output of output-layer perceptrons, which is output of
-    // network
     outputLayer->getOutputs(outputs);
 }
 
-// Trains a single training example once
 void Net::simpleTrain(real* input, real* expectedOutput)
 {
-    // See first what the network produces now for the input
-    // and see how far off it is.
     setInputs(input);
     propagate();
     computeOutputError(expectedOutput);
@@ -262,7 +197,6 @@ void Net::train(int epochs, ExampleFactory &trainingExamples)
     }
 }
 
-// Tests the network using the given examples, returning total error
 real Net::test(ExampleFactory &testExamples)
 {
     int inputSize = inputLayer->getUnits();
@@ -270,8 +204,7 @@ real Net::test(ExampleFactory &testExamples)
 
     real totalError = 0;
 
-    // Run network once on each example, adding error each time to a
-    // running total.
+
     for (int n=0; n < testExamples.numExamples(); n++) {
 	testExamples.getExample(inputSize, input, outputSize, expectedOutput);
 	run(input, actualOutput);
@@ -286,28 +219,18 @@ real Net::test(ExampleFactory &testExamples)
     return totalError;
 }
 
-// Automatically trains the network until its performance on
-// the test set appears to achieve a maximum. Returns total
-// error on the test set after completion.
-// - epochsBetweenTests establishes how many tests are done between
-//   test set checks for accuracy.
-// - cutOffError establishes how much worse, as a multiple, error has
-//   to be than the minimum error seen before we stop training. Must be >1.
+
 real Net::autotrain(ExampleFactory &trainingExamples,
 		    ExampleFactory &testExamples,
 		    int epochsBetweenTests,
 		    float cutOffError)
 {
-    // Get initial error with current weight set
     real minTestError = test(testExamples);
     real testError = minTestError;
 
     while (testError <= cutOffError*minTestError && !m_stop) {
-	// Train for a while on the training examples
 	train(epochsBetweenTests, trainingExamples);
 
-	// How good is network now? Save weights if it's the best
-	// we've seen so far on the test set.
 	testError = test(testExamples);
 	fprintf(stderr, "Test Error: %f %f\n", testError, minTestError);
 	if (testError < minTestError) {
@@ -316,7 +239,6 @@ real Net::autotrain(ExampleFactory &trainingExamples,
 	}
     }
 
-    // Restore weights so performance on test set is best we ever saw
     restoreWeights();
 
     return minTestError;
@@ -327,8 +249,7 @@ void Net::setStop(bool stop)
 	m_stop = stop;
 }
 
-// Runs the network on an input and feeds it forward to produce an
-// output. For usage after training with autotrain.
+
 void Net::run(real* input, real* output)
 {
     setInputs(input);
@@ -336,10 +257,8 @@ void Net::run(real* input, real* output)
     getOutputs(output);
 }
 
-// Deallocates storage used only during training
 void Net::doneTraining()
 {
-    // Simply call doneTraining() on each layer
     for (int layerNum=0; layerNum < numLayers; layerNum++) {
 	layer[layerNum]->doneTraining();
     }
