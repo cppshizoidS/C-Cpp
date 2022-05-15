@@ -106,8 +106,7 @@ int main()
             float fEyeX = sinf(fRayAngle); // Unit vector for ray in player space
             float fEyeY = cosf(fRayAngle);
 
-            // Incrementally cast ray from player, along ray angle, testing for
-            // intersection with a block
+           
             while (!bHitWall && fDistanceToWall < fDepth)
             {
                 fDistanceToWall += fStepSize;
