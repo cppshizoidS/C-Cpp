@@ -13,7 +13,7 @@ int qstate;
 MYSQL* conn;
 MYSQL_ROW row;
 MYSQL_RES* res;
-// Global Variable End
+
 
 class db_response
 {
@@ -52,7 +52,6 @@ void DeleteUser();
 void AddTrip();
 void EditTrip();
 void DeleteTrip();
-// Functions End
 
 int main()
 {
@@ -60,16 +59,13 @@ int main()
     system("cls");
     system("title Travel Agency Management System Program");
     system("color 0f");
-    // Initial Load End
-
+    
     // Call Methods
     db_response::ConnectionFunction();
-    // Call Methods End
 
     // Variables
     int chooseOneFromMenu = 0;
     char exitSurity;
-    // Variables End
 
     cout << "Welcome To Travel Agency Management System" << endl << endl;
     cout << "Travel Agency Management Menu" << endl;
@@ -152,12 +148,10 @@ void NewTravelTrip()
     string userTripPlan = "";
     string userTripCost = "";
     char choose;
-    // Variables End
 
     // Store Variables
     string storeUserTripPlan[500][500];
     int storeIndex1 = 0, storeIndex2 = 0;
-    // Store Variables End
 
     cout << "Welcome To Travel Agency Management System" << endl << endl;
     cout << "New Travel Trip Menu" << endl << endl;
@@ -243,11 +237,9 @@ void ShowUsers()
 {
     // Initial Load
     system("cls");
-    // Initial Load End
 
     // Variables
     char choose;
-    // Variables End
 
     cout << "Welcome To Travel Agency Management System" << endl << endl;
     cout << "Show Users Menu" << endl << endl;
@@ -284,12 +276,10 @@ void FindUser()
 {
     // Initial Load
     system("cls");
-    // Initial Load End
 
     // Variables
     string input = "";
     char choose;
-    // Variables End
 
     cout << "Welcome To Travel Agency Management System" << endl << endl;
     cout << "Show Users Menu" << endl << endl;
@@ -364,7 +354,6 @@ void EditUser()
     string storeUserTripCost = "";
     string storeUserTripPlan2d[500][500];
     int storeIndex1 = 0, storeIndex2 = 0;
-    // Variables End
 
     cout << "Welcome To Student Fee Inquiry Program" << endl << endl;
     cout << "Edit Student Record" << endl;
@@ -574,7 +563,6 @@ void DeleteUser()
     string items[5000];
     int indexForId = 0;
     bool HaveException = false, NotInDatabase = false;
-    // Variables End
 
     cout << "Welcome To Travel Agency Management System" << endl << endl;
     cout << "Show Users Menu" << endl << endl;
@@ -755,7 +743,6 @@ void EditTrip()
     // Store Variables
     string storeColumnId = "";
     string storeTripName = "";
-    // Variables End
 
     cout << "Welcome To Student Fee Inquiry Program" << endl << endl;
     cout << "Edit Trip Record" << endl;
