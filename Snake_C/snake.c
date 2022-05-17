@@ -22,11 +22,11 @@ typedef struct DirectedPoint {
 
 // Struct that holds info about one snake.
 typedef struct Snake {
-	DirectedPoint head; // Both head and tail must be directed to move snake
+	DirectedPoint head; 
 	DirectedPoint tail;
 	direction new_dir;
 	unsigned long long length; // Current snake length. Maybe not needed
-	long long lengthbuf; // If > 0, snake grows via lengthbuf--, length++
+	long long lengthbuf; 
 } Snake;
 
 // Actual playfield size without walls
@@ -39,8 +39,8 @@ enum { KEY_ARROWU = 0x415b1b,
        KEY_ARROWL = 0x445b1b };
 
 enum { BILLION = 1000000000 }; // Just a shortcut
-enum { FOOD_RARITY = 512, // Read as 'One food per FOOD_RARITY empty cells'
-       LVLUP_LENGTH = 50 }; // Level up each time this much length was gained
+enum { FOOD_RARITY = 512, 
+       LVLUP_LENGTH = 50 }; 
 
 sig_atomic_t run = 1; // For SIGINT handling
 
