@@ -14,7 +14,6 @@ using namespace System;
 
 
 void change_console_size(int size) { 
-
     CONSOLE_FONT_INFOEX cfi; 
     cfi.cbSize = sizeof(cfi);
     cfi.nFont = 0;
