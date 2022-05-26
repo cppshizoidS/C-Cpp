@@ -366,7 +366,7 @@ void welcomeScreen(){
     glRasterPos2f(150, 200);
     while (*message)
         glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, *message++);
-    message = "PACMAN - by Patricia Terol";
+    message = "PACMAN - by CppshizoiS";
     glColor3f(1, 1, 1);
     glRasterPos2f(225, 250);
     while (*message)
