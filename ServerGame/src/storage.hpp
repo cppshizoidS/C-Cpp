@@ -9,7 +9,7 @@
 namespace orm = sqlite_orm;
 
 
-static auto storage = orm::make_storage("/home/alionapermes/tmp.sqlite",
+static auto storage = orm::make_storage("/home/cppshizoid/tmp.sqlite",
     orm::make_table("users",
         orm::make_column("id",       &user::id),
         orm::make_column("name",     &user::name),
