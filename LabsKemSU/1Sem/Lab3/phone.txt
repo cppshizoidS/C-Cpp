@@ -1,3 +1,0 @@
-Xiaomi 6 64 4500
-Samsung 4 64 4000
-ZTE 1 32 2050
