@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.22)
+project(SHA)
+
+set(CMAKE_CXX_STANDARD 17)
+
+add_executable(SHA main.cpp sha1.hpp sha1_loc.h)
