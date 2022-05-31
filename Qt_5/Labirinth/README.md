@@ -1,0 +1,3 @@
+# qtlabirint
+Labirint BFS solver
+
