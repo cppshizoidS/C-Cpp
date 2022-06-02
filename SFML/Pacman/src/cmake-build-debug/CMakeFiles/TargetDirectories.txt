@@ -1,0 +1,3 @@
+/home/cppshizoid/Рабочий стол/Pac-Man/cmake-build-debug/CMakeFiles/Pac_Man.dir
+/home/cppshizoid/Рабочий стол/Pac-Man/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/cppshizoid/Рабочий стол/Pac-Man/cmake-build-debug/CMakeFiles/rebuild_cache.dir
