@@ -13,8 +13,7 @@
 #include "command_handlers.hpp"
 
 
-int
-main()
+int main()
 {
     using namespace fmt;
     namespace opt = boost::program_options;
