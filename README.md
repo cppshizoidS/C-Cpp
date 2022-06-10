@@ -25,7 +25,7 @@ Repository with project for learning a C and C++.
 * Vid_To_ASCII contain a program to convert video to ASCII using OpenCV
 
 --------------------------------------------------------------------------------
-Used technologies:Qt5, OpenGL, Glut, SFML, STL, Std C/C++
+Used technologies:Qt5, GTK, OpenGL, Glut, SFML, STL, Std C/C++
 
 [![](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](C++/) [![](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)](C/)
 ----------------------------------------------------------------------------------------------------------
