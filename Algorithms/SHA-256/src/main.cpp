@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <ctime>
-#include "SHA256.h"
+#include "SHA256.hpp"
 
 int main(int argc, char ** argv) {
 
