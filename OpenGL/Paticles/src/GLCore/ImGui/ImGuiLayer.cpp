@@ -19,7 +19,6 @@ namespace GLCore {
 
 	void ImGuiLayer::OnAttach()
 	{
-		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
 
@@ -28,7 +27,6 @@ namespace GLCore {
 		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;           // Enable Docking
 		io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;         // Enable Multi-Viewport / Platform Windows
 
-		// Setup Dear ImGui style
 		ImGui::StyleColorsDark();
 
 		ImGuiStyle& style = ImGui::GetStyle();
