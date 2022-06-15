@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Line.h"
+#include "Line.hpp"
 
 class Wall
 {
