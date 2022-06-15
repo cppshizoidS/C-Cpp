@@ -2,7 +2,7 @@
 
 #include <vector>
 #include <SFML/Graphics.hpp>
-#include "Beam.h"
+#include "Beam.hpp"
 
 class Source
 {
