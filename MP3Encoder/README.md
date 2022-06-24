@@ -1,5 +1,5 @@
 **MP3Encoder** 
-
+-
 It is a simple C++ command line application that encodes a set of WAV files to MP3
 
 
