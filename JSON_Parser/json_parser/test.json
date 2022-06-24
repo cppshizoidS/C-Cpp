@@ -1,0 +1,26 @@
+{
+  "mm": {
+    "underRoot1": {
+      "myKey": true,
+      "falseKey": false,
+      "nullKey": null
+    },
+    "underRoot2": [
+      {
+        "num1": 123,
+        "num2": 321,
+        "myKey": {
+          "underRoot2": "uga buga"
+        }
+      }
+    ]
+  },
+  "arr": [ "ok", "da" ],
+  "myKey": {
+    "deeper": "com",
+    "myKey": ["one", "two"],
+    "kek": {
+      "myKey": 4
+    }
+  }
+}
